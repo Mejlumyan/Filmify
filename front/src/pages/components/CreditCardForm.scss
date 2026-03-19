@@ -1,0 +1,69 @@
+$accent: #f5f505;
+$accent-dark: #c4c404;
+
+.credit-card-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.credit-card-form__fields {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.credit-card-form__field {
+  margin-bottom: 1rem;
+}
+
+.credit-card-form__input {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  color: white;
+  outline: none;
+  font-weight: 600;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+  font-family: inherit;
+
+  &:focus {
+    border-color: $accent;
+  }
+
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+  }
+}
+
+.credit-card-form__submit {
+  width: 100%;
+  background-color: $accent;
+  color: #111;
+  padding: 1.25rem 0;
+  border-radius: 1.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1875rem;
+  font-style: italic;
+  box-shadow: 0 20px 40px rgba(100, 100, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: inherit;
+
+  &:hover {
+    background-color: $accent-dark;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}

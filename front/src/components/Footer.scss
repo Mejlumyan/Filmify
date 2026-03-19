@@ -1,0 +1,261 @@
+.footer {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(250, 250, 250, 0.3));
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(228, 228, 231, 0.5);
+  padding: 2rem 1rem;
+  margin-top: auto;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: #18181b;
+  transition: all 0.7s ease;
+
+  .dark & {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.5), rgba(30, 41, 59, 0.3));
+    border-top-color: rgba(255, 255, 255, 0.05);
+    color: #fff;
+  }
+
+  @media (min-width: 768px) {
+    padding: 2.5rem 2rem;
+  }
+}
+
+.footer__content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.footer__section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer__title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #18181b;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+
+  .dark & {
+    color: #fff;
+  }
+}
+
+.footer__text {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #52525b;
+  margin: 0;
+
+  .dark & {
+    color: #a1a1aa;
+  }
+}
+
+// Socials
+.footer__socials {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.footer__social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  background: rgba(245, 245, 5, 0.15);
+  border-radius: 0.5rem;
+  color: #18181b;
+  transition: all 0.2s ease;
+
+  .dark & {
+    color: #fff;
+  }
+
+  &:hover {
+    background: #f5f505;
+    color: #020617;
+    transform: translateY(-2px);
+  }
+}
+
+.footer__contact-item {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  padding: 0;
+}
+
+.footer__contact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  color: #52525b;
+  flex-shrink: 0;
+
+  .dark & {
+    color: #a1a1aa;
+  }
+}
+
+.footer__contact-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #18181b;
+  margin: 0 0 0.15rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+
+  .dark & {
+    color: #fff;
+  }
+}
+
+.footer__contact-text {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: #52525b;
+  margin: 0;
+
+  .dark & {
+    color: #a1a1aa;
+  }
+}
+
+.footer__contact-link {
+  font-size: 0.85rem;
+  color: #18181b;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+
+  .dark & {
+    color: #fff;
+  }
+
+  &:hover {
+    color: #f5f505;
+  }
+}
+
+// Quick Links
+.footer__links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer__link {
+  font-size: 0.85rem;
+  color: #52525b;
+  text-decoration: none;
+  transition: all 0.2s ease;
+
+  .dark & {
+    color: #a1a1aa;
+  }
+
+  &:hover {
+    color: #f5f505;
+    padding-left: 4px;
+  }
+}
+
+.footer__divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(228, 228, 231, 0.5), transparent);
+  margin: 1.5rem 0;
+
+  .dark & {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+  }
+}
+
+.footer__bottom {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer__copyright {
+  font-size: 0.8rem;
+  color: #71717a;
+  margin: 0;
+
+  .dark & {
+    color: #52525b;
+  }
+}
+
+.footer__credit {
+  font-size: 0.75rem;
+  color: #a1a1aa;
+  margin: 0;
+
+  .dark & {
+    color: #71717a;
+  }
+}
+
+.footer__heart {
+  display: inline-block;
+  animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.15);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .footer {
+    padding: 2rem 1rem;
+  }
+
+  .footer__container {
+    gap: 1.5rem;
+  }
+
+  .footer__title {
+    font-size: 0.85rem;
+  }
+
+  .footer__text {
+    font-size: 0.8rem;
+  }
+
+  .footer__divider {
+    margin: 1rem 0;
+  }
+}
+

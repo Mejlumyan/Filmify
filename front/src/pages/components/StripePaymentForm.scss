@@ -1,0 +1,145 @@
+.stripe-payment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+}
+
+.stripe-payment-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.stripe-payment-form__label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #0f172a;
+
+  svg {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .dark & {
+    color: #f1f5f9;
+  }
+}
+
+.stripe-payment-form__card-wrapper {
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  border: 2px solid #e2e8f0;
+  border-radius: 0.875rem;
+  transition: all 0.3s ease;
+
+  &:focus-within {
+    border-color: #f5f505;
+    box-shadow: 0 0 0 3px rgba(245, 245, 5, 0.2);
+    background: #fff;
+  }
+
+  .dark & {
+    background: rgba(15, 23, 42, 0.6);
+    border-color: rgba(255, 255, 255, 0.1);
+
+    &:focus-within {
+      background: rgba(15, 23, 42, 0.9);
+      border-color: #f5f505;
+    }
+  }
+}
+
+.stripe-payment-form__error {
+  color: #ef4444;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.stripe-payment-form__amount {
+  padding: 1rem;
+  background: linear-gradient(135deg, rgba(245, 245, 5, 0.1), rgba(196, 196, 4, 0.05));
+  border: 2px solid rgba(245, 245, 5, 0.2);
+  border-radius: 0.875rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .dark & {
+    background: linear-gradient(135deg, rgba(245, 245, 5, 0.08), rgba(196, 196, 4, 0.03));
+    border-color: rgba(245, 245, 5, 0.2);
+  }
+}
+
+.stripe-payment-form__amount-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+  margin: 0;
+
+  .dark & {
+    color: #94a3b8;
+  }
+}
+
+.stripe-payment-form__amount-value {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #0f172a;
+  margin: 0;
+
+  .dark & {
+    color: #fff;
+  }
+}
+
+.stripe-payment-form__submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, #f5f505, #c4c404);
+  color: #020617;
+  font-weight: 900;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 0.875rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(245, 245, 5, 0.3);
+
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(245, 245, 5, 0.4);
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(0);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.stripe-payment-form__spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

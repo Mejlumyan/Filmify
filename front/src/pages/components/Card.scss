@@ -1,0 +1,208 @@
+$accent: #f5f505;
+$accent-dark: #c4c404;
+
+.credit-card {
+  width: 20rem;
+  height: 12rem;
+  position: relative;
+  perspective: 1000px;
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.card-back {
+  border-radius: 1rem;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #27272a, #000);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  &__stripe {
+    width: 100%;
+    height: 2.5rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    left: 0;
+    top: 2rem;
+  }
+
+  &__cvc-area {
+    margin-top: 4rem;
+    width: 100%;
+    text-align: right;
+  }
+
+  &__cvc-label {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.625rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.25rem;
+  }
+
+  &__cvc-box {
+    height: 2.5rem;
+    width: 100%;
+    background-color: white;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 1rem;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  &__cvc-value {
+    color: black;
+    font-family: monospace;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    font-style: italic;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0.2;
+  }
+
+  &__bar {
+    height: 1rem;
+    width: 3rem;
+    background-color: white;
+    border-radius: 2px;
+  }
+}
+
+.card-front {
+  border-radius: 1rem;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(135deg, $accent, $accent-dark);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+
+  &__glow {
+    position: absolute;
+    right: -2.5rem;
+    top: -2.5rem;
+    width: 10rem;
+    height: 10rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    filter: blur(48px);
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    z-index: 10;
+  }
+
+  &__type-wrap {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__type-label {
+    font-size: 0.625rem;
+    color: rgba(0, 0, 0, 0.6);
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 0.125rem;
+  }
+
+  &__type-name {
+    color: #111;
+    font-size: 1.25rem;
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    margin-top: 0.25rem;
+  }
+
+  &__number {
+    color: #111;
+    font-size: 1.25rem;
+    font-family: monospace;
+    letter-spacing: 0.25rem;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    padding: 0.5rem 0;
+    position: relative;
+    z-index: 10;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+    z-index: 10;
+  }
+
+  &__holder {
+    color: #111;
+  }
+
+  &__holder-label {
+    font-size: 0.5625rem;
+    color: rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+  }
+
+  &__holder-name {
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 10rem;
+  }
+
+  &__expiry {
+    color: #111;
+    text-align: right;
+  }
+
+  &__expiry-label {
+    font-size: 0.5625rem;
+    color: rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+  }
+
+  &__expiry-value {
+    font-size: 0.875rem;
+    font-weight: 700;
+    font-family: monospace;
+    font-style: italic;
+    line-height: 1;
+    margin-top: 0.125rem;
+  }
+}
